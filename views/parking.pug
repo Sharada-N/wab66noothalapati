@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  h1= title
+  
+  div(class="container-fluid")
+        div(class="row")
+            -
+                let parking = [
+                    {
+                        "type": "brand1",
+                        "ticket": "high",
+                        "capacity": "150"                        
+                    },
+                    {
+                        "type": "brand2",
+                        "ticket": "medium",
+                        "capacity": "100"
+                    },
+                    {
+                        "type": "brand3",
+                        "ticket": "low",
+                        "capacity": "100"
+                    },                   
+                ]
+            each p in parking 
+                div(class="col-sm-2" ) #{p.type}
+                div(class="col-sm-2" ) #{p.ticket}
+                div(class="col-sm-2" ) #{p.capacity}
