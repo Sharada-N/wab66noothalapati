@@ -8,22 +8,30 @@ block content
             -
                 let parking = [
                     {
-                        "type": "brand1",
-                        "ticket": "high",
+                        "type": "student",
+                        "ticket": "100",
                         "capacity": "150"                        
                     },
                     {
-                        "type": "brand2",
-                        "ticket": "medium",
+                        "type": "common",
+                        "ticket": "150",
                         "capacity": "100"
                     },
                     {
-                        "type": "brand3",
-                        "ticket": "low",
+                        "type": "professor",
+                        "ticket": "80",
                         "capacity": "100"
                     },                   
                 ]
-            each p in parking 
-                div(class="col-sm-2" ) #{p.type}
+            each p,ink in parking 
+                div(class="col-sm-2" onclick=`buy(${ink})` ) #{p.type}
                 div(class="col-sm-2" ) #{p.ticket}
                 div(class="col-sm-2" ) #{p.capacity}
+
+
+  script.
+     
+       function buy(a)
+       {
+         alert(`You purchased Item ${a+1}`)
+       }
